@@ -2,31 +2,31 @@ package examenrefactcod;
 
 public class ExamenRefactCOD {
 
-    public static boolean p = false;
+    public static boolean valorCorrecto = false;
 
     public static void main(String arg[]) {
-        int dig = 3;
-        int ndig = 0;
-        if (dig <= 0) {
+        int numDigitos = 3;
+        int numeroDigitosActual = 0;
+        if (numDigitos <= 0) {
             System.out.println("Ingrese como parámetro, un numero de digitos correcto (mayor que 0): ");
         }
         for (int i = 1; i <= 99999; i++) {
-            int aux = i;
+            int auxiliar = i;
 
             int contador = 0;
 
-            while (aux != 0) {
-                aux = aux / 10;
+            while (auxiliar != 0) {
+                auxiliar = auxiliar / 10;
                 contador++;
             }
-            ndig = contador;
+            numeroDigitosActual = contador;
 
-            if (ndig == dig) {
+            if (numeroDigitosActual == numDigitos) {
                 if (i < 4) {
-                    p = true;
+                    valorCorrecto = true;
                 } else {
                     if (i % 2 == 0) {
-                        p = false;
+                        valorCorrecto = false;
                     } else {
                         int contador1 = 0;
                         int i1 = 1;
@@ -46,12 +46,12 @@ public class ExamenRefactCOD {
                         }
 
                         if (contador1 == 1) {
-                            p = true;
+                            valorCorrecto = true;
                         }
                     }
                 }
 
-                if (p == true) {
+                if (valorCorrecto == true) {
                     System.out.println(i);
                 }
             }
